@@ -1,6 +1,9 @@
 /* style.css - Dark Blue and Light Blue Theme with Animations */
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Quicksand', sans-serif;
@@ -386,6 +389,67 @@ footer {
   .family-photo {
     width: 100%;
     height: auto;
+  }
+}
+/* 🌐 Mobile Responsive Styling */
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 1.6rem;
+    padding: 20px 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    display: block;
+    font-size: 1.05rem;
+    padding: 10px;
+    margin: 5px auto;
+    width: 90%;
+    text-align: center;
+    background-color: #dbeafe;
+    border-radius: 10px;
+  }
+
+  section {
+    padding: 25px 15px;
+    margin: 20px 10px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 10px;
+  }
+
+  .memory img {
+    height: auto;
+    width: 100%;
+  }
+
+  .family-tree {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .hover-pic,
+  .top-pic,
+  .center-pic,
+  .left-pic,
+  .right-pic {
+    display: none !important;
+  }
+
+  form input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  ul li {
+    font-size: 1rem;
   }
 }
 
