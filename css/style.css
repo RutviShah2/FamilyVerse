@@ -322,4 +322,71 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+/* 📱 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.8rem;
+    padding: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 30px 15px;
+    border-radius: 10px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .memory img {
+    height: 180px;
+  }
+
+  .storybook {
+    padding: 20px;
+  }
+
+  .page h3 {
+    font-size: 1.2rem;
+  }
+
+  .page p {
+    font-size: 1rem;
+  }
+
+  form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .tree ul {
+    flex-direction: column;
+  }
+
+  .hover-pic, .top-pic, .left-pic, .right-pic, .center-pic {
+    display: none !important;
+  }
+
+  .gallery img,
+  .family-photo {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
