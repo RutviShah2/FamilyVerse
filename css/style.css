@@ -7,8 +7,8 @@ html {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: #f0f8ff; /* light blue background */
-  color: #1e3a8a; /* dark blue text */
+  background-color: #f0f8ff;
+  color: #1e3a8a;
   margin: 0;
   padding: 0;
   opacity: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  background-color: #1e3a8a; /* dark blue */
+  background-color: #1e3a8a;
   padding: 30px;
   text-align: center;
   font-size: 2.5rem;
@@ -32,16 +32,17 @@ header {
 }
 
 nav {
-  background-color: #e0f2fe; /* very light blue */
+  background-color: #e0f2fe;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 15px;
   border-bottom: 2px solid #bfdbfe;
 }
 
 nav a {
-  color: #1e40af; /* slightly lighter dark blue */
-  margin: 0 20px;
+  color: #1e40af;
+  margin: 8px 15px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -106,14 +107,15 @@ li {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 5px;
 }
 
 .gallery img {
-  width: 250px;
+  width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -157,10 +159,11 @@ footer {
   background-color: #e0f2fe;
   border-top: 2px solid #bfdbfe;
 }
+
 .family-photo {
-  width: 60%;
-  max-width: 250px;  /* Square size: you can adjust */
-  height: 250px;     /* 💡 Same as width to make it square */
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -169,25 +172,14 @@ footer {
 
 .family-photo:hover {
   transform: scale(1.03);
-  .page img {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
- /* 👈 fixed height for uniformity */
-  object-fit: cover; /* 👈 ensures image doesn’t stretch */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
-}
 .page {
-  overflow: hidden; /* ✨ Keeps absolutely-positioned images inside */
-  position: relative; /* 📌 Makes .page the positioning container */
+  overflow: hidden;
+  position: relative;
 }
+
 .page img {
-  
   object-fit: cover;
   position: absolute;
   top: 20px;
@@ -201,14 +193,15 @@ footer {
 .page:hover img {
   display: block;
 }
+
 .family-tree {
   text-align: center;
   margin: 40px auto;
   padding: 30px;
   background: #e0f2fe;
   border-radius: 15px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  max-width: 600px; /* 👈 smaller width */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
 }
 
 .tree ul {
@@ -216,6 +209,7 @@ footer {
   position: relative;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tree li {
@@ -225,7 +219,8 @@ footer {
   text-align: center;
 }
 
-.tree li::before, .tree li::after {
+.tree li::before,
+.tree li::after {
   content: '';
   position: absolute;
   top: 0;
@@ -249,92 +244,28 @@ footer {
   display: none;
 }
 
-.box {
-  position: relative;
-}
-
-/* Shared styles for all hover images */
-.hover-pic {
-  display: none;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-/* Show image on hover */
-.box:hover .hover-pic {
-  display: block;
-}
-
-/* Rutvii's image on left */
-.left-pic {
-  top: -10px;
-  left: -130px;
-}
-
-/* Poojan's (and parents') image on right */
+.hover-pic,
+.top-pic,
+.center-pic,
+.left-pic,
 .right-pic {
-  top: -10px;
-  right: -130px;
+  display: none;
 }
-/* 👑 For the parents' box */
-.parent-box {
-  padding-top: 110px; /* space for image above */
-}
-
-/* 📸 Top center image */
-.top-pic {
-  position: absolute;
-  top: -110px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.center-pic {
-  top: -120px; /* places image above */
-  left: 50%;
-  transform: translateX(-50%);
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px; /* ⬅️ reduced gap */
-  margin-top: 20px; /* ⬅️ less space above gallery */
-  padding: 10px 10px; /* ⬅️ smaller side padding */
-}
-.memory img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 
 .memory img {
   width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .memory img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-/* 📱 Mobile Responsive Styles */
+
 @media (max-width: 768px) {
   header {
     font-size: 1.8rem;
@@ -359,6 +290,7 @@ footer {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
+    padding: 10px;
   }
 
   .memory img {
@@ -390,7 +322,11 @@ footer {
     flex-direction: column;
   }
 
-  .hover-pic, .top-pic, .left-pic, .right-pic, .center-pic {
+  .hover-pic,
+  .top-pic,
+  .left-pic,
+  .right-pic,
+  .center-pic {
     display: none !important;
   }
 
@@ -400,18 +336,8 @@ footer {
     height: auto;
   }
 }
-/* 🌐 Mobile Responsive Styling */
+
 @media screen and (max-width: 768px) {
-  header {
-    font-size: 1.6rem;
-    padding: 20px 10px;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   nav a {
     display: block;
     font-size: 1.05rem;
@@ -428,27 +354,9 @@ footer {
     margin: 20px 10px;
   }
 
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    padding: 10px;
-  }
-
-  .memory img {
-    height: auto;
-    width: 100%;
-  }
-
   .family-tree {
     padding: 15px;
     max-width: 90%;
-  }
-
-  .hover-pic,
-  .top-pic,
-  .center-pic,
-  .left-pic,
-  .right-pic {
-    display: none !important;
   }
 
   form input,
@@ -461,5 +369,3 @@ footer {
     font-size: 1rem;
   }
 }
-
-
